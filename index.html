@@ -3,176 +3,288 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Suporte Técnico</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <title>Suporte Técnico de Alta Performance</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     <style>
+        /* --- Configurações Globais e Variáveis de Design --- */
+        /* Opção 1: Bloco de Cores (Moderno e Confiável) */
+        :root {
+            --cor-primaria: #1d3557;        /* Azul Marinho Profundo */
+            --cor-secundaria: #457b9d;      /* Azul Aço Suave */
+            --cor-acento: #e63946;          /* Vermelho Vibrante para CTAs */
+            --cor-fundo: #f1faee;            /* Fundo Off-White (Quase Branco) */
+            --cor-card: #ffffff;
+            --cor-texto-principal: #1d3557;
+            --cor-texto-secundario: #5a6268;
+            --sombra-card: 0 10px 30px rgba(69, 123, 157, 0.1);
+            --borda-radius: 16px;
+            --transicao-suave: all 0.3s ease-in-out;
+        }
+
         body {
             font-family: 'Roboto', sans-serif;
-            background: #f4f7f6;
+            background-color: var(--cor-fundo);
             margin: 0;
             padding: 0;
-            color: #000;
+            color: var(--cor-texto-principal);
             font-size: 18px;
-            line-height: 1.6; /* Melhor legibilidade */
+            font-weight: 400;
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
         }
-        header {
+
+        /* --- Seção Hero --- */
+        .hero {
+            background: linear-gradient(45deg, var(--cor-primaria), var(--cor-secundaria));
+            color: #ffffff;
+            padding: 80px 20px;
             text-align: center;
-            padding: 20px;
         }
-        header h1 {
-            font-size: 2.2em;
-            margin: 0.5em 0;
-            background: linear-gradient(to right, #888, #000);
-            -webkit-background-clip: text;
-            color: transparent;
+
+        .hero h1 {
+            font-size: 3.2em;
+            font-weight: 900;
+            margin: 0 0 15px 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
         }
+
+        .hero p {
+            font-size: 1.2em;
+            font-weight: 300;
+            max-width: 650px;
+            margin: 0 auto 30px auto;
+            opacity: 0.9;
+        }
+        
+        /* --- Botão de Chamada para Ação (CTA) --- */
+        .cta-button {
+            display: inline-block;
+            background-color: var(--cor-acento);
+            color: #ffffff;
+            padding: 15px 35px;
+            border-radius: 50px; /* Formato de pílula */
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1em;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+            transition: var(--transicao-suave);
+        }
+
+        .cta-button:hover {
+            background-color: #d62839; /* Tom mais escuro do vermelho */
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(230, 57, 70, 0.3);
+        }
+
+        /* --- Conteúdo Principal --- */
         main {
-            max-width: 1200px;
-            margin: 40px auto;
-            padding: 20px;
+            max-width: 1000px;
+            margin: 60px auto;
+            padding: 0 20px;
             display: flex;
             flex-direction: column;
-            align-items: center;
+            gap: 50px;
         }
-        .box {
-            border: 1px solid #d3d3d3;
-            background-color: #ffffff;
-            padding: 30px;
-            margin: 15px;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
-            border-radius: 10px;
-            width: 100%;
-            max-width: 800px;
-            text-align: justify;
+
+        .card {
+            background-color: var(--cor-card);
+            padding: 40px;
+            box-shadow: var(--sombra-card);
+            border-radius: var(--borda-radius);
+            border: 1px solid #e9ecef;
         }
-        .box h2 {
-            font-size: 2.0em;
-            background: linear-gradient(to right, #888, #000);
-            -webkit-background-clip: text;
-            color: transparent;
-            margin: 0.5em 0;
+
+        .card h2 {
+            font-size: 2.4em;
+            font-weight: 700;
+            color: var(--cor-primaria);
             text-align: center;
+            margin-top: 0;
+            margin-bottom: 40px;
         }
-        .card-image {
-            width: 100%;
-            height: 150px;
-            object-fit: cover;
-            border-radius: 8px;
+        
+        /* --- Grade de Benefícios com Ícones --- */
+        .beneficios-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 35px;
+            margin-top: 20px;
         }
+
+        .beneficio-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+        }
+
+        .beneficio-icon {
+            color: var(--cor-secundaria);
+            flex-shrink: 0;
+        }
+        
+        .beneficio-item h3 {
+            margin: 0 0 5px 0;
+            font-size: 1.2em;
+            font-weight: 500;
+            color: var(--cor-texto-principal);
+        }
+
+        .beneficio-item p {
+            margin: 0;
+            font-size: 0.95em;
+            line-height: 1.6;
+            color: var(--cor-texto-secundario);
+        }
+
+        /* --- Tabela Moderna --- */
+        .table-container {
+            overflow-x: auto;
+        }
+        
         table {
             width: 100%;
             border-collapse: collapse;
-            margin-top: 20px;
+            margin-top: 25px;
         }
+
         th, td {
-            border: 1px solid #ddd;
-            padding: 10px;
+            padding: 18px 15px;
+            text-align: left;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        thead th {
+            background-color: transparent;
+            color: var(--cor-primaria);
+            font-weight: 700;
+            font-size: 1.1em;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        tbody tr {
+            transition: background-color 0.2s ease;
+        }
+        
+        tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        tbody tr:hover {
+            background-color: #f7f9fb;
+        }
+
+        td:first-child {
+            font-weight: 500;
+        }
+
+        td:last-child {
+            color: var(--cor-texto-secundario);
+        }
+
+        /* --- Rodapé --- */
+        footer {
+            background-color: #e2e8f0; /* Um cinza azulado que combina com a paleta */
+            color: var(--cor-texto-secundario);
             text-align: center;
+            padding: 30px 20px;
+            margin-top: 60px;
+            font-size: 0.9em;
         }
-        th {
-            background-color: #f2f2f2;
-        }
-        @media screen and (max-width: 600px) {
-            body {
-                font-size: 16px;
-            }
-            .box {
-                padding: 15px;
-                margin: 10px;
-            }
-            header h1,
-            .box h2 {
-                font-size: 1.8em;
-            }
-            table {
-                display: block;
-                overflow-x: auto;
-            }
+
+        /* --- Responsividade --- */
+        @media screen and (max-width: 768px) {
+            body { font-size: 16px; }
+            .hero h1 { font-size: 2.5em; }
+            .hero p { font-size: 1.1em; }
+            .card h2 { font-size: 2em; }
+            .card { padding: 30px; }
+            main { margin: 40px auto; gap: 40px; }
         }
     </style>
 </head>
 <body>
 
-<header>
-    <h1>Suporte Técnico</h1>
+<header class="hero">
+    <h1>Performance e Segurança para Seus Dispositivos</h1>
+    <p>Soluções completas em manutenção preventiva e corretiva para garantir que sua tecnologia funcione sempre para você, e não contra você.</p>
+    <a href="#servicos" class="cta-button">Conheça Nossos Serviços</a>
 </header>
 
 <main>
-    <div class="box">
-        <h2>A Importância da Manutenção Preventiva</h2>
-        <img src="https://www.petronet.com.br/wp-content/uploads/2024/02/manutencao-eficaz-do-seu-wordpress.webp" alt="Manutenção Eficaz" class="card-image">
-        <p>Realizar manutenção preventiva em computadores, tablets e smartphones é importante porque ajuda a evitar problemas futuros e a manter esses dispositivos funcionando de forma eficiente por mais tempo. Aqui estão algumas razões simples para isso:</p>
-        <ul>
-            <li><strong>Desempenho otimizado:</strong> A manutenção preventiva ajuda a garantir que os dispositivos continuem rápidos e responsivos, evitando lentidão e travamentos que podem ocorrer devido ao acúmulo de arquivos temporários ou problemas de software.</li>
-            <li><strong>Segurança:</strong> Ao manter o sistema operacional e o software atualizados, bem como realizar verificações de segurança regulares, podemos proteger nossos dispositivos contra vírus, malware e outras ameaças cibernéticas que possam comprometer nossos dados ou privacidade.</li>
-            <li><strong>Confiabilidade:</strong> A manutenção preventiva pode ajudar a prevenir falhas de hardware, como problemas de disco rígido ou superaquecimento do processador, prolongando a vida útil dos dispositivos e evitando a perda de dados.</li>
-            <li><strong>Economia de tempo e dinheiro:</strong> Investir um pouco de tempo em manutenção preventiva regular pode economizar muito tempo e dinheiro a longo prazo. Evitar problemas antes que eles ocorram pode evitar custosas visitas ao técnico ou a necessidade de substituir o dispositivo prematuramente.</li>
-            <li><strong>Experiência do usuário:</strong> Dispositivos bem mantidos oferecem uma melhor experiência ao usuário, com menos interrupções e frustrações causadas por problemas de desempenho ou segurança.</li>
-        </ul>
-    </div>
+    <section class="card">
+        <h2>Por Que a Manutenção é Essencial?</h2>
+        <div class="beneficios-grid">
+            <div class="beneficio-item">
+                <div class="beneficio-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                </div>
+                <div>
+                    <h3>Segurança Reforçada</h3>
+                    <p>Proteção robusta contra vírus, malware e outras ameaças digitais que colocam seus dados em risco.</p>
+                </div>
+            </div>
+            <div class="beneficio-item">
+                <div class="beneficio-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 12.5L12 15l-2.5-2.5"/><path d="M20 12c0-4.4-3.6-8-8-8s-8 3.6-8 8 3.6 8 8 8 8-3.6 8-8z"/><path d="M12 12h.01"/></svg>
+                </div>
+                <div>
+                    <h3>Desempenho Otimizado</h3>
+                    <p>Seus dispositivos mais rápidos e responsivos, livres de lentidão e travamentos inesperados.</p>
+                </div>
+            </div>
+            <div class="beneficio-item">
+                <div class="beneficio-icon">
+                     <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+                </div>
+                <div>
+                    <h3>Maior Confiabilidade</h3>
+                    <p>Prevenção de falhas de hardware, aumentando a vida útil dos seus equipamentos e evitando perda de dados.</p>
+                </div>
+            </div>
+            <div class="beneficio-item">
+                 <div class="beneficio-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.2 12.3c.5-.3.8-.8.8-1.3s-.3-1-.8-1.3l-8-4.9c-.5-.3-1.1-.3-1.6 0l-8 4.9c-.5.3-.8.8-.8 1.3s.3 1 .8 1.3l8 4.9c.5.3 1.1.3 1.6 0l8-4.9z"/><path d="M4 14.7l8 4.9 8-4.9"/><path d="M4 19.7l8 4.9 8-4.9"/></svg>
+                </div>
+                <div>
+                    <h3>Economia Inteligente</h3>
+                    <p>Investir em prevenção evita gastos elevados com reparos emergenciais e substituição de peças.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <div class="box">
-        <h2>Serviços Oferecidos</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>Serviço</th>
-                    <th>Descrição</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Análise do sistema operacional</td>
-                    <td>Verificação detalhada do sistema operacional para otimizar o desempenho e a estabilidade.</td>
-                </tr>
-                <tr>
-                    <td>Análise dos programas mais utilizados</td>
-                    <td>Exame dos aplicativos frequentes para identificar necessidades de atualizações ou correções.</td>
-                </tr>
-                <tr>
-                    <td>Atualizações de Software e Sistema Operacional</td>
-                    <td>Instalação de atualizações para segurança e desempenho.</td>
-                </tr>
-                <tr>
-                    <td>Detecção e remoção de ameaças virtuais</td>
-                    <td>Varreduras para proteger contra vírus e malware.</td>
-                </tr>
-                <tr>
-                    <td>Configuração e segurança dos browsers</td>
-                    <td>Ajustes para uma navegação segura e privada.</td>
-                </tr>
-                <tr>
-                    <td>Monitoramento de Desempenho</td>
-                    <td>Acompanhamento do uso da CPU, memória e disco para otimizar a experiência.</td>
-                </tr>
-                <tr>
-                    <td>Limpeza de disco</td>
-                    <td>Remoção de arquivos desnecessários para liberar espaço.</td>
-                </tr>
-                <tr>
-                    <td>Desfragmentação do sistema operacional</td>
-                    <td>Reorganização de arquivos para melhorar o acesso e o desempenho.</td>
-                </tr>
-                <tr>
-                    <td>Testes de Integridade do Disco</td>
-                    <td>Verificações para assegurar a integridade dos dados armazenados.</td>
-                </tr>
-                <tr>
-                    <td>Firewall e Configurações de Rede</td>
-                    <td>Revisão e ajuste para proteção contra acessos e ataques não autorizados.</td>
-                </tr>
-                <tr>
-                    <td>Recuperação de arquivos deletados acidentalmente</td>
-                    <td>Serviços para restaurar dados importantes perdidos.</td>
-                </tr>
-                <tr>
-                    <td>Reparação do sistema operacional</td>
-                    <td>Diagnóstico e correção de problemas graves do sistema.</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+    <section class="card" id="servicos">
+        <h2>Catálogo de Serviços</h2>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Serviço</th>
+                        <th>Descrição Detalhada</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Análise de Sistema</td><td>Verificação completa para otimizar desempenho e estabilidade.</td></tr>
+                    <tr><td>Análise de Programas</td><td>Exame dos aplicativos mais usados para atualizações ou correções.</td></tr>
+                    <tr><td>Atualizações Críticas</td><td>Instalação de updates de segurança e performance.</td></tr>
+                    <tr><td>Remoção de Ameaças</td><td>Varreduras profundas para detectar e eliminar vírus e spyware.</td></tr>
+                    <tr><td>Segurança de Navegadores</td><td>Otimização dos browsers para uma navegação segura e privada.</td></tr>
+                    <tr><td>Monitoramento de Desempenho</td><td>Acompanhamento de CPU, memória e disco para garantir fluidez.</td></tr>
+                    <tr><td>Limpeza e Otimização de Disco</td><td>Remoção de arquivos desnecessários para liberar espaço.</td></tr>
+                    <tr><td>Verificação de Integridade</td><td>Testes no disco rígido ou SSD para assegurar a saúde dos dados.</td></tr>
+                    <tr><td>Configuração de Firewall e Rede</td><td>Revisão da proteção de rede contra acessos não autorizados.</td></tr>
+                    <tr><td>Recuperação de Arquivos</td><td>Tentativa de restauração de dados importantes deletados.</td></tr>
+                    <tr><td>Reparo Completo do Sistema</td><td>Diagnóstico e correção de falhas críticas do sistema operacional.</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
 </main>
+
+<footer>
+    <p>&copy; 2025 Serviços de Suporte Técnico. Todos os direitos reservados.</p>
+</footer>
 
 </body>
 </html>
